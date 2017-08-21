@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dataTypeDemoUser">
+      <Property name="creationType">com.bstek.demo.model.DemoUser</Property>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dataSetDemoUser">
+      <Property name="dataType">[dataTypeDemoUser]</Property>
+    </DataSet>
+    <DataGrid id="gridDemoUser"/>
+    <UpdateAction id="updateActionDemoUser">
+      <Property name="dataResolver">hibernateDaoTest#saveDemoUsers</Property>
+      <UpdateItem/>
+    </UpdateAction>
+    <ToolBar>
+      <ToolBarButton id="barbuttonUserAdd">
+        <ClientEvent name="onClick">var data = view.get(&quot;#dataSetDemoUser.data&quot;);&#xD;
+data.inser();&#xD;
+</ClientEvent>
+      </ToolBarButton>
+      <ToolBarButton id="barbuttonUserDel">
+        <ClientEvent name="onClick">var entity  =   view.get(&quot;#dataSetDemoUser.data:#&quot;);&#xD;
+if(entity){&#xD;
+	entity.remove();&#xD;
+}else{&#xD;
+	dorado.Message.alert(&quot;必须选中一行记录!&quot;);&#xD;
+}&#xD;
+</ClientEvent>
+      </ToolBarButton>
+      <ToolBarButton id="bartuttonUserSave">
+        <ClientEvent name="onClick">view.get(&quot;#updateActionDemoUser&quot;).execute();&#xD;
+&#xD;
+</ClientEvent>
+      </ToolBarButton>
+    </ToolBar>
+  </View>
+</ViewConfig>

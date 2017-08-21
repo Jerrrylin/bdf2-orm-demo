@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bstek.bdf2</groupId>
+	<version>1.0.0</version>
+	<artifactId>bdf2-orm-demo</artifactId>
+	<packaging>war</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>com.bstek.bdf2</groupId>
+			<artifactId>bdf2-core</artifactId>
+			<version>2.0.9</version>
+			</dependency>
+       	<dependency>
+      		  <groupId>org.slf4j</groupId>
+     		   <artifactId>slf4j-api</artifactId>
+     		  <version>1.6.6</version>
+  		  </dependency>
+
+   		 <dependency>
+      		  <groupId>org.slf4j</groupId>
+      		  <artifactId>slf4j-log4j12</artifactId>
+      			  <version>1.6.6</version>
+  		  </dependency>
+   		 <dependency>
+     		   <groupId>log4j</groupId>
+      		  <artifactId>log4j</artifactId>
+     		   <version>1.2.16</version>
+   		 </dependency>
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+   			 <groupId>mysql</groupId>
+    			<artifactId>mysql-connector-java</artifactId>
+  		  <version>5.1.21</version>
+		</dependency>
+	</dependencies>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>4.0.0.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.7.v20150116</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<repositories>
+		<repository>
+			<id>bsdn-maven-repository</id>
+			<url>http://nexus.bsdn.org/content/groups/public/</url>
+		</repository>
+	</repositories>
+</project>
