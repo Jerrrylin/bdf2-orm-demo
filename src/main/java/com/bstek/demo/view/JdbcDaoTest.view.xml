@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ViewConfig>
+  <Arguments/>
+  <Context/>
+  <Model>
+    <DataType name="dataTypeDemoUser">
+      <Property name="creationType">com.bstek.demo.model.DemoUser</Property>
+    </DataType>
+  </Model>
+  <View>
+    <DataSet id="dataSetDemoUser">
+      <Property name="dataType">[dataTypeDemoUser]</Property>
+    </DataSet>
+    <DataGrid id="gridDemoUser"/>
+  </View>
+</ViewConfig>
